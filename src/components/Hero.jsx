@@ -16,29 +16,43 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="flex flex-col sm:flex-row border border-gray-400 ">
-      <div className="w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
-        <div className="text-[#414141]">
-          <div className="flex items-center gap-2 ">
-            <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
-            <p className="font-semibold text-lg md:text-xl ">MOST POPULAR</p>
+    <div className="relative w-full h-screen">
+      {/* Background Image */}
+      <img
+        src={importedModelImages[currentModelIndex].model}
+        alt="Model"
+        className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 ease-in-out"
+      />
+
+      {/* Gradient Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10"></div>
+
+      {/* Text Content */}
+      <div className="relative z-20 flex items-center justify-start h-full px-8 sm:px-16">
+        <div className="text-[#EFEFEF] max-w-xl">
+          <div className="flex items-center gap-2">
+            <p className="w-8 md:w-11 h-[2px] bg-[#EFEFEF]"></p>
+            <a
+              href="#"
+              className="font-semibold text-lg md:text-xl transform transition-transform duration-300 hover:scale-110"
+            >
+              MOST POPULAR
+            </a>
           </div>
-          <h1 className="prata-regular text-4xl sm:py-3 lg:text-7xl leading-relaxed ">
-          Effortless Management
+          <h1 className="prata-regular text-4xl sm:py-3 lg:text-7xl leading-relaxed">
+            Effortless Management
           </h1>
           <div className="flex items-center gap-2">
-            <p className="font-semibold text-lg md:text-xl ">Book NOW</p>
-            <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
+            <a
+              href="#"
+              className="font-semibold text-lg md:text-xl transform transition-transform duration-300 hover:scale-110"
+            >
+              Book NOW
+            </a>
+            <p className="w-8 md:w-11 h-[2px] bg-[#EFEFEF]"></p>
           </div>
         </div>
       </div>
-
-      <img
-      
-        src={importedModelImages[currentModelIndex].model}
-        alt="Model"
-       className="w-full sm:w-1/2 object-cover transition-all duration-500 ease-in-out transform"
-      />
     </div>
   );
 };

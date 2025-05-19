@@ -4,12 +4,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="mt-10 px-6 bg-gray-900">
-      <hr className="border-gray-300" />
-      <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14  text-sm text-gray-100 py-5">
+    <footer className="mt-10 bg-gray-900 text-gray-100 px-6">
+      <hr className="border-gray-700" />
+      <div className="py-10 grid grid-cols-1 sm:grid-cols-[3fr_1fr_1fr] gap-10">
+        {/* About Section */}
         <div>
-          <h1 className="text-xl font-bold mb-5">GET TO KNOW US</h1>
-          <p className="w-full sm:w-2/3 text-gray-100 text-lg">
+          <h2 className="text-2xl font-semibold mb-4">GET TO KNOW US</h2>
+          <p className="text-base leading-relaxed max-w-xl">
             True Events is your all-in-one sports event management platform
             designed to power every stage of your event journey — from
             discovering and promoting trending tournaments, managing team
@@ -20,36 +21,40 @@ const Footer = () => {
           </p>
         </div>
 
+        {/* Company Navigation */}
         <nav>
-          <p className="text-xl font-bold mb-5">COMPANY</p>
-          <ul className="flex flex-col text-gray-100 cursor-pointer text-lg">
-            <li className="mb-2" onClick={scrollToTop}>
-              Home
-            </li>
-            <li className="mb-2" onClick={scrollToTop}>
-              About Us
-            </li>
-            <li className="mb-2" onClick={scrollToTop}>
-              Contact us
-            </li>
-            <li className="mb-2" onClick={scrollToTop}>
-              Privacy Policy
-            </li>
+          <h2 className="text-2xl font-semibold mb-4">COMPANY</h2>
+          <ul className="space-y-3 text-base cursor-pointer">
+            {["Home", "About Us", "Contact Us", "Privacy Policy"].map(
+              (item, idx) => (
+                <li
+                  key={idx}
+                  onClick={scrollToTop}
+                  className="hover:text-orange-400 transition-colors"
+                >
+                  {item}
+                </li>
+              )
+            )}
           </ul>
         </nav>
 
+        {/* Contact Info */}
         <address className="not-italic">
-          <p className="text-xl font-bold mb-5">GET IN TOUCH</p>
-          <ul className="flex flex-col text-gray-100 text-lg">
-            <li className="mb-2">
-              <a href="tel:+61415555012" className="hover:underline">
+          <h2 className="text-2xl font-semibold mb-4">GET IN TOUCH</h2>
+          <ul className="space-y-3 text-base">
+            <li>
+              <a
+                href="tel:+1234567890"
+                className="hover:underline hover:text-orange-400 transition-colors"
+              >
                 +123 456 7890
               </a>
             </li>
-            <li className="mb-2">
+            <li>
               <a
                 href="mailto:contact@trueEvents.com"
-                className="hover:underline"
+                className="hover:underline hover:text-orange-400 transition-colors"
               >
                 contact@trueEvents.com
               </a>
@@ -59,8 +64,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <hr className="border-gray-300" />
-      <p className="py-5 text-sm text-center text-gray-100">
+      <hr className="border-gray-700" />
+      <p className="text-center py-6 text-sm text-gray-400">
         © 2025 trueEvents.com — All rights reserved.
       </p>
     </footer>

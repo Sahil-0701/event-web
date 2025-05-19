@@ -12,9 +12,9 @@ const Home = () => {
   return (
     <div>
       <Hero />
+      <OurPolicies/>
       <Collection/>
       <BestSeller/>
-      <OurPolicies/>
      
     </div>
   );

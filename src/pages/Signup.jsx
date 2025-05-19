@@ -10,7 +10,7 @@ const Signup = () => {
           Create Account ✨
         </h2>
         <p className="text-center text-gray-500 mb-8">
-          Join the VIBEMART community today!
+          Join the trueEvents community today!
         </p>
 
         <form className="space-y-6">
